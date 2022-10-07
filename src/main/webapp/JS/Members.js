@@ -17,16 +17,24 @@
 	
 	/** 아이디를 모두 대문자로 입력하도록 유효성 검사 설정 */
 	var ch = document.joinForm.id.value.charAt(0);
-	
+	/*
 	for(i=0; i<document.joinForm.id.value.length; i++){
 		var ch = document.joinForm.id.value.charAt(i);
+		if(ch < 'A' || ch> 'Z'){
+			alert("아이디는 대문자이어야 합니다.");
+			document.joinForm.id.focus();
+			return;
+		}
 	}
+	*/
 	
-	if(ch < 'A' || ch> 'Z'){
-		alert("아이디는 대문자이어야 합니다.");
+	var notString = /^[a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;		/* 모든 문자 */
+	if(!notString.test(document.joinForm.id.value)){
+		alert("아이디는 숫자로 시작할 수 없습니다!");
 		document.joinForm.id.focus();
 		return;
 	}
+	
 	
 	if(document.joinForm.pw.value.length == 0){
 		alert("비밀번호는 필수 입력사항입니다!");
