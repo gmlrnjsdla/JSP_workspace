@@ -11,6 +11,7 @@
 		session.invalidate(); 	// 모든 세션 삭제
 	
 	%>
-	<a href="session_check.jsp">세션의 모든 정보 확인</a>
+	<a href="session_check.jsp">세션의 모든 정보 확인</a><br><br>
+	<a href="login2.jsp">로그인 화면으로 이동</a><br>	
 </body>
 </html>
